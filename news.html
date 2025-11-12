@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events - GVMI Maritime Finance & Asset Management</title>
+    <meta name="description" content="Latest news from GVMI including corporate updates, SEACON 2025 coverage, media coverage, and maritime industry events.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="GVMI News - Latest Updates & Events">
+    <meta property="og:description" content="Stay informed with the latest news from GVMI including corporate updates, industry events, and media coverage.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gvmi.com/news">
+    <meta property="og:image" content="resources/maritime-meeting.jpg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --accent-gold: #f59e0b;
+            --neutral-gray: #6b7280;
+            --light-gray: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', 'Noto Sans', sans-serif;
+            background-color: var(--light-gray);
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--accent-gold);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .news-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(30, 58, 138, 0.1);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(30, 58, 138, 0.15);
+            border-color: var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-900">
+                        GVMI
+                        <span class="text-amber-500 text-sm font-normal">Maritime</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="nav-link text-blue-900 font-medium">Home</a>
+                    <a href="about.html" class="nav-link text-blue-900 font-medium">About</a>
+                    <a href="services.html" class="nav-link text-blue-900 font-medium">Services</a>
+                    <a href="advantages.html" class="nav-link text-blue-900 font-medium">Advantages</a>
+                    <a href="fleet.html" class="nav-link text-blue-900 font-medium">Fleet</a>
+                    <a href="insights.html" class="nav-link text-blue-900 font-medium">Insights</a>
+                    <a href="news.html" class="nav-link text-blue-900 font-medium">News</a>
+                    <a href="partners.html" class="nav-link text-blue-900 font-medium">Partners</a>
+                    <a href="contact.html" class="nav-link text-blue-900 font-medium">Contact</a>
+                    
+                    <!-- Language Switch -->
+                    <div class="flex items-center space-x-2">
+                        <button class="language-btn active px-2 py-1 text-sm font-medium text-blue-900 bg-amber-100 rounded" data-lang="en">EN</button>
+                        <button class="language-btn px-2 py-1 text-sm font-medium text-blue-900 hover:bg-amber-100 rounded" data-lang="zh">中文</button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-blue-900 hover:text-amber-500">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="block px-3 py-2 text-blue-900 font-medium">Home</a>
+                    <a href="about.html" class="block px-3 py-2 text-blue-900 font-medium">About</a>
+                    <a href="services.html" class="block px-3 py-2 text-blue-900 font-medium">Services</a>
+                    <a href="advantages.html" class="block px-3 py-2 text-blue-900 font-medium">Advantages</a>
+                    <a href="fleet.html" class="block px-3 py-2 text-blue-900 font-medium">Fleet</a>
+                    <a href="insights.html" class="block px-3 py-2 text-blue-900 font-medium">Insights</a>
+                    <a href="news.html" class="block px-3 py-2 text-blue-900 font-medium">News</a>
+                    <a href="partners.html" class="block px-3 py-2 text-blue-900 font-medium">Partners</a>
+                    <a href="contact.html" class="block px-3 py-2 text-blue-900 font-medium">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6">News & Events</h1>
+            <p class="text-xl md:text-2xl max-w-4xl mx-auto">
+                Stay informed with the latest updates from GVMI including corporate news, industry events, and media coverage.
+            </p>
+        </div>
+    </section>
+
+    <!-- Featured News -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Latest News</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    The most recent updates from GVMI and the maritime finance industry.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 mb-16">
+                <!-- Main Featured News -->
+                <article class="news-card bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                    <img src="resources/office-building.jpg" alt="GVMI Corporate Update" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Corporate News</span>
+                            <span class="text-sm text-gray-500">December 20, 2024</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-4">GVMI Announces Record $500M Asset Growth in 2024</h3>
+                        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+                            Golden Valley Marine Investment (GVMI) today announced a significant milestone in its corporate growth, 
+                            achieving a record $500 million in asset growth throughout 2024. This expansion reflects the company's 
+                            strategic positioning in the maritime finance sector and its commitment to sustainable shipping solutions.
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">5 min read</span>
+                            <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read Full Article →</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Secondary Featured News -->
+                <div class="space-y-8">
+                    <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Sustainability</span>
+                            <span class="text-sm text-gray-500">December 18, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">GVMI Launches Green Shipping Initiative</h3>
+                        <p class="text-gray-600 mb-4">
+                            New program focuses on sustainable maritime finance solutions and carbon-neutral shipping investments.
+                        </p>
+                        <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Learn More →</a>
+                    </article>
+                    
+                    <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Partnership</span>
+                            <span class="text-sm text-gray-500">December 15, 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Strategic Partnership with Leading Technology Provider</h3>
+                        <p class="text-gray-600 mb-4">
+                            GVMI announces strategic alliance to enhance data analytics capabilities and digital transformation.
+                        </p>
+                        <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Learn More →</a>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEACON 2025 Preview -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-blue-900 to-blue-800 text-white rounded-2xl p-12 text-center">
+                <h2 class="text-4xl font-bold mb-6">SEACON 2025</h2>
+                <p class="text-xl mb-8 max-w-3xl mx-auto">
+                    Join GVMI at the premier maritime finance conference of 2025. Connect with industry leaders, 
+                    explore new opportunities, and discover the future of sustainable shipping.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">March 15-17</div>
+                        <div class="text-blue-200">2025</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">Shanghai</div>
+                        <div class="text-blue-200">China</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">500+</div>
+                        <div class="text-blue-200">Attendees</div>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-amber-500 hover:bg-amber-600 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                        Register Now
+                    </button>
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All News -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">All News & Updates</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Complete coverage of GVMI's activities, achievements, and industry involvement.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Corporate News -->
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Corporate News</span>
+                        <span class="text-sm text-gray-500">Dec 12, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">GVMI Expands Asian Operations</h3>
+                    <p class="text-gray-600 mb-4">
+                        New regional office in Singapore strengthens GVMI's presence in Southeast Asian markets, 
+                        enhancing local support for maritime finance clients.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+                
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Industry Recognition</span>
+                        <span class="text-sm text-gray-500">Dec 10, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Lloyd's List Top 9 Recognition</h3>
+                    <p class="text-gray-600 mb-4">
+                        GVMI honored with Lloyd's List Top 9 maritime finance company recognition for innovation 
+                        and reliability in maritime financial services.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+                
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Media Coverage</span>
+                        <span class="text-sm text-gray-500">Dec 8, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">Financial Times Features GVMI</h3>
+                    <p class="text-gray-600 mb-4">
+                        Leading financial publication highlights GVMI's innovative approach to sustainable maritime 
+                        finance and data-driven investment strategies.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+                
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Events</span>
+                        <span class="text-sm text-gray-500">Dec 5, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">GVMI Presents at Maritime Finance Summit</h3>
+                    <p class="text-gray-600 mb-4">
+                        CEO Zhang Wei presents on "The Future of Sustainable Maritime Finance" at the annual 
+                        Maritime Finance Summit in London.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+                
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Fleet Update</span>
+                        <span class="text-sm text-gray-500">Dec 3, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">New Vessel Acquisition Enhances Fleet</h3>
+                    <p class="text-gray-600 mb-4">
+                        GVMI adds five new eco-friendly container vessels to its managed fleet, supporting 
+                        sustainable shipping initiatives and client requirements.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+                
+                <article class="news-card bg-gray-50 rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium mr-3">Research</span>
+                        <span class="text-sm text-gray-500">Dec 1, 2024</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-blue-900 mb-4">GVMI Publishes Annual Maritime Report</h3>
+                    <p class="text-gray-600 mb-4">
+                        Comprehensive annual report on global maritime markets, featuring exclusive data from 
+                        Clarksons and Drewry partnerships and expert analysis.
+                    </p>
+                    <a href="#" class="text-amber-600 font-semibold hover:text-amber-700">Read More →</a>
+                </article>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                    Load More News
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Coverage -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-blue-900 mb-6">Media Coverage</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    See what leading publications are saying about GVMI and our impact on maritime finance.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-pink-600 font-bold text-lg">FT</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Financial Times</h3>
+                    <p class="text-sm text-gray-600">"Innovation in Maritime Finance"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-red-600 font-bold text-lg">LL</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Lloyd's List</h3>
+                    <p class="text-sm text-gray-600">"Top 9 Maritime Finance Companies"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 font-bold text-lg">TS</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">TradeWinds</h3>
+                    <p class="text-sm text-gray-600">"Sustainable Shipping Leadership"</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-green-600 font-bold text-lg">MJ</span>
+                    </div>
+                    <h3 class="font-bold text-blue-900 mb-2">Maritime Journal</h3>
+                    <p class="text-sm text-gray-600">"Digital Transformation in Finance"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Stay Updated with GVMI News</h2>
+            <p class="text-xl mb-8">
+                Subscribe to our newsletter for the latest news, industry insights, and event updates delivered to your inbox.
+            </p>
+            
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email address" 
+                       class="flex-1 px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-500">
+                <button type="submit" 
+                        class="bg-amber-500 hover:bg-amber-600 px-8 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    Subscribe
+                </button>
+            </form>
+            
+            <p class="text-sm mt-4 text-blue-200">
+                Get breaking news, event invitations, and exclusive insights. Unsubscribe at any time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-2xl font-bold mb-4">
+                        GVMI
+                        <span class="text-amber-500 text-sm">Maritime</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Golden Valley Marine Investment - Leading maritime finance and asset management solutions.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Market Research</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Financial Solutions</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Asset Management</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Sustainable Shipping</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="about.html" class="text-gray-400 hover:text-amber-500 transition-colors">About GVMI</a></li>
+                        <li><a href="fleet.html" class="text-gray-400 hover:text-amber-500 transition-colors">Our Fleet</a></li>
+                        <li><a href="partners.html" class="text-gray-400 hover:text-amber-500 transition-colors">Partners</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-amber-500 transition-colors">News</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Shanghai, China</li>
+                        <li>+86 21 1234 5678</li>
+                        <li>info@gvmi.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Golden Valley Marine Investment (GVMI). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="main.js"></script>
+</body>
+</html>
