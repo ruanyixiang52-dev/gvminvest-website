@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GVMI - Maritime Finance & Asset Management</title>
-    <meta name="description" content="Golden Valley Marine Investment (GVMI) — Seacon Group's maritime finance platform. Data-driven solutions, $1B+ credit, $2.8B assets, global partners.">
-    
+    <meta name="description"
+        content="Golden Valley Marine Investment (GVMI) — Seacon Group's maritime finance platform. Data-driven solutions, $1B+ credit, $2.8B assets, global partners.">
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="GVMI - Maritime Finance & Asset Management">
-    <meta property="og:description" content="Data-driven maritime finance solutions with $1B+ credit facility and $2.8B in managed assets.">
+    <meta property="og:description"
+        content="Data-driven maritime finance solutions with $1B+ credit facility and $2.8B in managed assets.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gvmi.com">
     <meta property="og:image" content="resources/hero-maritime.jpg">
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Core Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
@@ -28,7 +33,7 @@
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
-    
+
     <!-- Custom Styles -->
     <style>
         :root {
@@ -37,73 +42,74 @@
             --neutral-gray: #6b7280;
             --light-gray: #f8fafc;
         }
-        
+
         body {
             font-family: 'Inter', 'Noto Sans', sans-serif;
             background-color: var(--light-gray);
         }
-        
+
         .hero-bg {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.6)), 
-                        url('resources/hero-maritime.jpg') center/cover no-repeat;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.6)),
+                url('resources/hero-maritime.jpg') center/cover no-repeat;
             min-height: 100vh;
         }
-        
+
         .animate-fade-in-up {
             animation: fadeInUp 0.6s ease-out forwards;
         }
-        
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
+
         .stat-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-card {
             transition: all 0.3s ease;
             border: 1px solid rgba(30, 58, 138, 0.1);
         }
-        
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px rgba(30, 58, 138, 0.15);
             border-color: var(--accent-gold);
         }
-        
+
         .partner-logo {
             filter: grayscale(100%);
             transition: filter 0.3s ease;
         }
-        
+
         .partner-logo:hover {
             filter: grayscale(0%);
         }
-        
+
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
         }
-        
+
         .nav-link:hover {
             color: var(--accent-gold);
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -114,28 +120,36 @@
             background-color: var(--accent-gold);
             transition: width 0.3s ease;
         }
-        
+
         .nav-link:hover::after {
             width: 100%;
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, var(--primary-blue), var(--accent-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .floating-animation {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-lg z-50">
@@ -148,36 +162,46 @@
                         <span class="text-amber-500 text-sm font-normal">Maritime</span>
                     </div>
                 </div>
-                
+
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="nav-link text-blue-900 font-medium">Home</a>
-                    <a href="about.html" class="nav-link text-blue-900 font-medium">About</a>
-                    <a href="services.html" class="nav-link text-blue-900 font-medium">Services</a>
-                    <a href="advantages.html" class="nav-link text-blue-900 font-medium">Advantages</a>
-                    <a href="fleet.html" class="nav-link text-blue-900 font-medium">Fleet</a>
-                    <a href="insights.html" class="nav-link text-blue-900 font-medium">Insights</a>
-                    <a href="news.html" class="nav-link text-blue-900 font-medium">News</a>
-                    <a href="partners.html" class="nav-link text-blue-900 font-medium">Partners</a>
-                    <a href="contact.html" class="nav-link text-blue-900 font-medium">Contact</a>
-                    
+                    <a href="index.html" class="nav-link text-blue-900 font-medium" data-i18n="nav.home">Home</a>
+                    <a href="about.html" class="nav-link text-blue-900 font-medium" data-i18n="nav.about">About</a>
+                    <a href="services.html" class="nav-link text-blue-900 font-medium"
+                        data-i18n="nav.services">Services</a>
+                    <a href="advantages.html" class="nav-link text-blue-900 font-medium"
+                        data-i18n="nav.advantages">Advantages</a>
+                    <a href="fleet.html" class="nav-link text-blue-900 font-medium" data-i18n="nav.fleet">Fleet</a>
+                    <a href="insights.html" class="nav-link text-blue-900 font-medium"
+                        data-i18n="nav.insights">Insights</a>
+                    <a href="news.html" class="nav-link text-blue-900 font-medium" data-i18n="nav.news">News</a>
+                    <a href="partners.html" class="nav-link text-blue-900 font-medium"
+                        data-i18n="nav.partners">Partners</a>
+                    <a href="contact.html" class="nav-link text-blue-900 font-medium"
+                        data-i18n="nav.contact">Contact</a>
+
                     <!-- Language Switch -->
                     <div class="flex items-center space-x-2">
-                        <button class="language-btn active px-2 py-1 text-sm font-medium text-blue-900 bg-amber-100 rounded" data-lang="en">EN</button>
-                        <button class="language-btn px-2 py-1 text-sm font-medium text-blue-900 hover:bg-amber-100 rounded" data-lang="zh">中文</button>
+                        <button
+                            class="language-btn active px-2 py-1 text-sm font-medium text-blue-900 bg-amber-100 rounded"
+                            data-lang="en">EN</button>
+                        <button
+                            class="language-btn px-2 py-1 text-sm font-medium text-blue-900 hover:bg-amber-100 rounded"
+                            data-lang="zh">中文</button>
                     </div>
                 </div>
-                
+
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-blue-900 hover:text-amber-500">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
                 <div class="px-2 pt-2 pb-3 space-y-1">
@@ -200,28 +224,34 @@
         <div class="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-800/60"></div>
         <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="floating-animation">
-                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 leading-tight" data-i18n="hero.title">
                     Navigating Opportunities & Risks in Maritime Finance
                 </h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed">
-                    Golden Valley Marine Investment (GVMI) — Seacon Shipping Group's maritime finance platform. 
-                    Data-driven insights, low-cost financing, and full-cycle asset management to support sustainable shipping.
+                <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto leading-relaxed" data-i18n="hero.description">
+                    Golden Valley Marine Investment (GVMI) — Seacon Shipping Group's maritime finance platform.
+                    Data-driven insights, low-cost financing, and full-cycle asset management to support sustainable
+                    shipping.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                    <a href="contact.html" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                    <a href="contact.html"
+                        class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                        data-i18n="hero.contactBtn">
                         Contact Us
                     </a>
-                    <a href="services.html" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                    <a href="services.html"
+                        class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+                        data-i18n="hero.brochureBtn">
                         Download Corporate Brochure
                     </a>
                 </div>
             </div>
         </div>
-        
+
         <!-- Scroll Indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
             </svg>
         </div>
     </section>
@@ -234,25 +264,25 @@
                     <div class="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
                         <span class="counter" data-target="300">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Fleet Vessels</div>
+                    <div class="text-gray-600 font-medium" data-i18n="stats.vessels">Fleet Vessels</div>
                 </div>
                 <div class="stat-card text-center p-8 rounded-xl shadow-lg">
                     <div class="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
                         <span class="counter" data-target="1000000000">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Credit Facility</div>
+                    <div class="text-gray-600 font-medium" data-i18n="stats.credit">Credit Facility</div>
                 </div>
                 <div class="stat-card text-center p-8 rounded-xl shadow-lg">
                     <div class="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
                         <span class="counter" data-target="2800000000">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Managed Assets</div>
+                    <div class="text-gray-600 font-medium" data-i18n="stats.assets">Managed Assets</div>
                 </div>
                 <div class="stat-card text-center p-8 rounded-xl shadow-lg">
                     <div class="text-4xl md:text-5xl font-bold text-blue-900 mb-2">
                         <span class="counter" data-target="120">0</span>
                     </div>
-                    <div class="text-gray-600 font-medium">Global Clients</div>
+                    <div class="text-gray-600 font-medium" data-i18n="stats.clients">Global Clients</div>
                 </div>
             </div>
         </div>
@@ -262,60 +292,72 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6" data-i18n="services.title">
                     Comprehensive Maritime Solutions
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    From market intelligence to asset disposition, we deliver tailored solutions 
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="services.description">
+                    From market intelligence to asset disposition, we deliver tailored solutions
                     that combine maritime expertise with exclusive data partnerships.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-blue-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                            </path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Market Research</h3>
-                    <p class="text-gray-600 mb-6">
-                        Advanced freight forecasting and market intelligence with 3-month predictive analytics, 
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4" data-i18n="services.marketResearch">Market
+                        Research</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="services.marketResearchDesc">
+                        Advanced freight forecasting and market intelligence with 3-month predictive analytics,
                         powered by exclusive partnerships with Clarksons and Drewry.
                     </p>
-                    <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors">
+                    <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors"
+                        data-i18n="services.learnMore">
                         Learn More →
                     </a>
                 </div>
-                
+
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="w-16 h-16 bg-amber-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1">
+                            </path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Financial Solutions</h3>
-                    <p class="text-gray-600 mb-6">
-                        Comprehensive leasing solutions and CIMI financing with access to $1B+ credit facilities 
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4" data-i18n="services.financialSolutions">Financial
+                        Solutions</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="services.financialSolutionsDesc">
+                        Comprehensive leasing solutions and CIMI financing with access to $1B+ credit facilities
                         through partnerships with 40+ financial institutions.
                     </p>
-                    <a href="services.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors">
+                    <a href="services.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors"
+                        data-i18n="services.learnMore">
                         Learn More →
                     </a>
                 </div>
-                
+
                 <div class="service-card bg-white p-8 rounded-xl shadow-lg">
                     <div class="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                            </path>
                         </svg>
                     </div>
-                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Asset Management</h3>
-                    <p class="text-gray-600 mb-6">
-                        Full-cycle asset management from acquisition through operation to disposition, 
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4" data-i18n="services.assetManagement">Asset
+                        Management</h3>
+                    <p class="text-gray-600 mb-6" data-i18n="services.assetManagementDesc">
+                        Full-cycle asset management from acquisition through operation to disposition,
                         maximizing returns while minimizing risks across $2.8B in diversified assets.
                     </p>
-                    <a href="fleet.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors">
+                    <a href="fleet.html" class="text-amber-500 font-semibold hover:text-amber-600 transition-colors"
+                        data-i18n="services.learnMore">
                         Learn More →
                     </a>
                 </div>
@@ -327,58 +369,69 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6" data-i18n="caseStudies.title">
                     Proven Track Record
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Discover how our data-driven approach and maritime expertise have delivered exceptional results for our clients.
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="caseStudies.description">
+                    Discover how our data-driven approach and maritime expertise have delivered exceptional results for
+                    our clients.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <img src="resources/fleet-1.jpg" alt="Container Fleet Expansion" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Container Fleet Expansion</h3>
-                        <p class="text-gray-600 mb-4">
-                            Helped major shipping company expand their container fleet by 40% through innovative financing structure.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="caseStudies.case1Title">Container
+                            Fleet Expansion</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="caseStudies.case1Desc">
+                            Helped major shipping company expand their container fleet by 40% through innovative
+                            financing structure.
                         </p>
                         <div class="flex items-center text-amber-500 font-semibold">
-                            <span>$150M Financing</span>
+                            <span data-i18n="caseStudies.case1Tag">$150M Financing</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
                             </svg>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-                    <img src="resources/fleet-2.jpg" alt="Sustainable Shipping Initiative" class="w-full h-48 object-cover">
+                    <img src="resources/fleet-2.jpg" alt="Sustainable Shipping Initiative"
+                        class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Sustainable Shipping</h3>
-                        <p class="text-gray-600 mb-4">
-                            Facilitated the transition to LNG-powered vessels, reducing emissions by 35% across the fleet.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="caseStudies.case2Title">Sustainable
+                            Shipping</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="caseStudies.case2Desc">
+                            Facilitated the transition to LNG-powered vessels, reducing emissions by 35% across the
+                            fleet.
                         </p>
                         <div class="flex items-center text-amber-500 font-semibold">
-                            <span>Green Financing</span>
+                            <span data-i18n="caseStudies.case2Tag">Green Financing</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
                             </svg>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <img src="resources/fleet-3.jpg" alt="Risk Management Excellence" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Risk Management</h3>
-                        <p class="text-gray-600 mb-4">
-                            Implemented comprehensive risk framework that reduced operational costs by 25% while improving safety.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="caseStudies.case3Title">Risk
+                            Management</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="caseStudies.case3Desc">
+                            Implemented comprehensive risk framework that reduced operational costs by 25% while
+                            improving safety.
                         </p>
                         <div class="flex items-center text-amber-500 font-semibold">
-                            <span>Cost Optimization</span>
+                            <span data-i18n="caseStudies.case3Tag">Cost Optimization</span>
                             <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
                             </svg>
                         </div>
                     </div>
@@ -391,45 +444,51 @@
     <section class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6" data-i18n="partners.title">
                     Strategic Partners
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Building success through strategic partnerships with industry leaders in maritime finance, 
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="partners.description">
+                    Building success through strategic partnerships with industry leaders in maritime finance,
                     technology, and sustainable shipping solutions.
                 </p>
             </div>
-            
+
             <div id="partner-carousel" class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">Clarksons</div>
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">Drewry</div>
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">SEACON</div>
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">Lloyd's</div>
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">Maersk</div>
                             </div>
                         </li>
                         <li class="splide__slide">
-                            <div class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
+                            <div
+                                class="partner-logo flex items-center justify-center p-8 bg-white rounded-lg shadow-md h-32">
                                 <div class="text-2xl font-bold text-blue-900">Cargill</div>
                             </div>
                         </li>
@@ -443,14 +502,15 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-blue-900 mb-6" data-i18n="insights.title">
                     Latest Insights
                 </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Stay informed with our market research, industry analysis, and expert perspectives on maritime finance.
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-i18n="insights.description">
+                    Stay informed with our market research, industry analysis, and expert perspectives on maritime
+                    finance.
                 </p>
             </div>
-            
+
             <div class="grid md:grid-cols-3 gap-8">
                 <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-48 bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center">
@@ -460,19 +520,23 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Maritime Market Forecast</h3>
-                        <p class="text-gray-600 mb-4">
-                            Comprehensive analysis of global shipping trends, freight rates, and market dynamics for Q4 2024.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="insights.article1Title">Maritime
+                            Market Forecast</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="insights.article1Desc">
+                            Comprehensive analysis of global shipping trends, freight rates, and market dynamics for Q4
+                            2024.
                         </p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">December 15, 2024</span>
-                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600">
+                            <span class="text-sm text-gray-500" data-i18n="insights.article1Date">December 15,
+                                2024</span>
+                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600"
+                                data-i18n="insights.readMore">
                                 Read More →
                             </a>
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-48 bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center">
                         <div class="text-white text-center">
@@ -481,19 +545,23 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Sustainable Finance Trends</h3>
-                        <p class="text-gray-600 mb-4">
-                            Exploring the intersection of environmental responsibility and profitable maritime investment strategies.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="insights.article2Title">Sustainable
+                            Finance Trends</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="insights.article2Desc">
+                            Exploring the intersection of environmental responsibility and profitable maritime
+                            investment strategies.
                         </p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">December 10, 2024</span>
-                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600">
+                            <span class="text-sm text-gray-500" data-i18n="insights.article2Date">December 10,
+                                2024</span>
+                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600"
+                                data-i18n="insights.readMore">
                                 Read More →
                             </a>
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="bg-gray-50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                     <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
                         <div class="text-white text-center">
@@ -502,22 +570,28 @@
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-3">Operational Risk Framework</h3>
-                        <p class="text-gray-600 mb-4">
-                            Advanced methodologies for identifying, assessing, and mitigating operational risks in maritime operations.
+                        <h3 class="text-xl font-bold text-blue-900 mb-3" data-i18n="insights.article3Title">Operational
+                            Risk Framework</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="insights.article3Desc">
+                            Advanced methodologies for identifying, assessing, and mitigating operational risks in
+                            maritime operations.
                         </p>
                         <div class="flex items-center justify-between">
-                            <span class="text-sm text-gray-500">December 5, 2024</span>
-                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600">
+                            <span class="text-sm text-gray-500" data-i18n="insights.article3Date">December 5,
+                                2024</span>
+                            <a href="insights.html" class="text-amber-500 font-semibold hover:text-amber-600"
+                                data-i18n="insights.readMore">
                                 Read More →
                             </a>
                         </div>
                     </div>
                 </article>
             </div>
-            
+
             <div class="text-center mt-12">
-                <a href="insights.html" class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                <a href="insights.html"
+                    class="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                    data-i18n="insights.viewAll">
                     View All Insights
                 </a>
             </div>
@@ -527,18 +601,22 @@
     <!-- Call to Action -->
     <section class="py-20 bg-gradient-to-r from-blue-900 to-blue-800 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.title">
                 Ready to Navigate Your Maritime Success?
             </h2>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
-                Partner with GVMI for data-driven maritime finance solutions that deliver results. 
+            <p class="text-xl mb-8 max-w-3xl mx-auto" data-i18n="cta.description">
+                Partner with GVMI for data-driven maritime finance solutions that deliver results.
                 Contact our experts today to discuss your specific needs.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="contact.html" class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105">
+                <a href="contact.html"
+                    class="bg-amber-500 hover:bg-amber-600 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                    data-i18n="cta.getStarted">
                     Get Started Today
                 </a>
-                <a href="services.html" class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300">
+                <a href="services.html"
+                    class="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300"
+                    data-i18n="cta.exploreServices">
                     Explore Our Services
                 </a>
             </div>
@@ -554,60 +632,75 @@
                         GVMI
                         <span class="text-amber-500 text-sm">Maritime</span>
                     </div>
-                    <p class="text-gray-400 mb-4">
+                    <p class="text-gray-400 mb-4" data-i18n="footer.description">
                         Golden Valley Marine Investment - Leading maritime finance and asset management solutions.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                                <path
+                                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                             </svg>
                         </a>
                         <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                             </svg>
                         </a>
                     </div>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Services</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-i18n="footer.services">Services</h3>
                     <ul class="space-y-2">
-                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Market Research</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Financial Solutions</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Asset Management</a></li>
-                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors">Sustainable Shipping</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.serviceLink1">Market
+                                Research</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.serviceLink2">Financial Solutions</a>
+                        </li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.serviceLink3">Asset
+                                Management</a></li>
+                        <li><a href="services.html"
+                                class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.serviceLink4">Sustainable Shipping</a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Company</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-i18n="footer.company">Company</h3>
                     <ul class="space-y-2">
-                        <li><a href="about.html" class="text-gray-400 hover:text-amber-500 transition-colors">About GVMI</a></li>
-                        <li><a href="fleet.html" class="text-gray-400 hover:text-amber-500 transition-colors">Our Fleet</a></li>
-                        <li><a href="partners.html" class="text-gray-400 hover:text-amber-500 transition-colors">Partners</a></li>
-                        <li><a href="news.html" class="text-gray-400 hover:text-amber-500 transition-colors">News</a></li>
+                        <li><a href="about.html" class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.companyLink1">About
+                                GVMI</a></li>
+                        <li><a href="fleet.html" class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.companyLink2">Our
+                                Fleet</a></li>
+                        <li><a href="partners.html"
+                                class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.companyLink3">Partners</a></li>
+                        <li><a href="news.html" class="text-gray-400 hover:text-amber-500 transition-colors" data-i18n="footer.companyLink4">News</a>
+                        </li>
                     </ul>
                 </div>
-                
+
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                    <h3 class="text-lg font-semibold mb-4" data-i18n="footer.contact">Contact</h3>
                     <ul class="space-y-2 text-gray-400">
-                        <li>Shanghai, China</li>
+                        <li data-i18n="footer.address">Shanghai, China</li>
                         <li>+86 21 1234 5678</li>
                         <li>info@gvmi.com</li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Golden Valley Marine Investment (GVMI). All rights reserved.</p>
+                <p data-i18n="footer.rights">&copy; 2024 Golden Valley Marine Investment (GVMI). All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
 
     <!-- Main JavaScript -->
+    <script src="translations.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
