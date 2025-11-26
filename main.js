@@ -418,7 +418,7 @@ function switchLanguage(language) {
 
     // Show notification
     const langName = language === 'en' ? 'English' : '中文';
-    showNotification(`Language switched to ${langName}`, 'info');
+    // showNotification(`Language switched to ${langName}`, 'info');
 }
 
 // Initialize language switching
